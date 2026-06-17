@@ -75,7 +75,36 @@ Every bug posted on the platform is automatically analyzed by the engine:
   "spaceComplexity": "O(n)",
   "explanation": "The outer loop runs n times, and the inner binary search runs log n per iteration, giving O(n log n) overall time complexity."
 }
-🔐 Authentication & SecurityJWT access + refresh token authentication with token rotationGoogle OAuth 2.0 & Firebase authentication integrationPassword reset workflows via NodemailerAccount lockout mechanisms after multiple failed attemptsSecurity hardening with Helmet.js security headers and API rate limiting protection📊 Personalized RecommendationsTopic-based bug recommendations adjusted to your profileRecommendations intelligently mapped based on solve historyGraceful fallback system for brand new users🛡️ Admin PanelFull CRUD operations for Users, Bugs, Solutions, and BattlesComprehensive battle creation, timing constraints, and lifecycle managementMonitor grids to view and review all live battle submissions🏗️ Tech StackCategoryTechnologiesFrontendReact 18, React Router, Framer MotionBackendNode.js, Express.js, Socket.IODatabaseMongoDB, Mongoose ODMAuthenticationJWT, Passport.js, Firebase OAuthAI IntegrationOpenAI GPT-4o-miniSecurityHelmet, bcryptjs, express-rate-limitUtilitiesNodemailer (Email), PDFKit (Certificates)📂 Project ArchitectureBashDebugDSA-platform/
+
+🔐 Authentication & Security
+JWT access + refresh token authentication with token rotation
+
+Google OAuth 2.0 & Firebase authentication integration
+
+Password reset workflows via Nodemailer
+
+Account lockout mechanisms after multiple failed attempts
+
+Security hardening with Helmet.js security headers and API rate limiting protection
+
+📊 Personalized Recommendations
+Topic-based bug recommendations adjusted to your profile
+
+Recommendations intelligently mapped based on solve history
+
+Graceful fallback system for brand new users
+
+
+🛡️ Admin Panel
+Full CRUD operations for Users, Bugs, Solutions, and Battles
+
+Comprehensive battle creation, timing constraints, and lifecycle management
+
+Monitor grids to view and review all live battle submissions
+
+🏗️ Tech StackCategoryTechnologiesFrontendReact 18, React Router, Framer MotionBackendNode.js, Express.js, Socket.IODatabaseMongoDB, Mongoose ODMAuthenticationJWT, Passport.js, Firebase OAuthAI IntegrationOpenAI GPT-4o-miniSecurityHelmet, bcryptjs, express-rate-limitUtilitiesNodemailer (Email), PDFKit (Certificates)
+
+DebugDSA-platform/
 │
 ├── backend/                          # Express.js REST API + Socket.IO server
 │   │
@@ -199,11 +228,31 @@ Every bug posted on the platform is automatically analyzed by the engine:
 │   └── README.md
 │
 └── README.md
-⚙️ Local SetupPrerequisitesNode.js >= 18MongoDB (Local or Atlas Cluster)OpenAI API Key (Optional)Google OAuth Credentials (Optional)1️⃣ Clone RepositoryBashgit clone [https://github.com/your-username/DebugDSA-platform.git](https://github.com/your-username/DebugDSA-platform.git)
+
+
+⚙️ Local Setup
+Prerequisites
+Node.js >= 18
+
+MongoDB (Local or Atlas Cluster)
+
+OpenAI API Key (Optional)
+
+Google OAuth Credentials (Optional)
+
+1️⃣ Clone Repository
+
+git clone [https://github.com/your-username/DebugDSA-platform.git](https://github.com/your-username/DebugDSA-platform.git)
 cd DebugDSA-platform
-2️⃣ Backend SetupBashcd backend
+
+2️⃣ Backend Setup
+Bash
+cd backend
 npm install
-Create a .env file in the root of the backend/ directory:Code snippetPORT=5000
+Create a .env file in the root of the backend/ directory:
+
+Code snippet[
+PORT=5000
 MONGO_URI=your_mongodb_uri
 
 JWT_SECRET=your_jwt_secret
@@ -211,12 +260,34 @@ JWT_REFRESH_SECRET=your_refresh_secret
 
 OPENAI_API_KEY=your_openai_key
 
-FRONTEND_URL=http://localhost:3000
-Start the local API development environment server:Bashnpm run dev
-3️⃣ Frontend SetupBashcd ../frontend
+FRONTEND_URL=http://localhost:3000]
+Start the local API development environment server:
+
+Bash
+npm run dev
+
+3️⃣ Frontend Setup
+Bash
+cd ../frontend
 npm install
 npm start
-🔐 Security FeaturesStateless JWT tokens backed by secure Refresh Token Rotation defensesHardened password storage with high-factor bcryptjs encryption hashingCustom secure header configurations powered by Helmet.js middlewareGranular endpoint API rate-limiting to throttle script-kiddie automated hitsAccount freezing blocks to secure accounts from ongoing automated sign-in attempts🤝 ContributingContributions make the open-source world run! Want to help out?Bash# Fork the repository
+
+🔐 Security Features
+Stateless JWT tokens backed by secure Refresh Token Rotation defenses
+
+Hardened password storage with high-factor bcryptjs encryption hashing
+
+Custom secure header configurations powered by Helmet.js middleware
+
+Granular endpoint API rate-limiting to throttle script-kiddie automated hits
+
+Account freezing blocks to secure accounts from ongoing automated sign-in attempts
+
+🤝 Contributing
+Contributions make the open-source world run! Want to help out?
+
+Bash
+# Fork the repository
 # Create your feature branch
 git checkout -b feature/amazing-feature
 
@@ -225,4 +296,11 @@ git commit -m "Add amazing feature"
 
 # Push to your branch
 git push origin feature/amazing-feature
-Once submitted, simply fire open a standard Pull Request tracking pipeline.📄 LicenseThis ecosystem codebase is distributed fully under the terms of the MIT License.Made with ❤️ using the MERN Stack + AI⭐ Star this repository if you found it useful!
+Once submitted, simply fire open a standard Pull Request tracking pipeline.
+
+📄 License
+This ecosystem codebase is distributed fully under the terms of the MIT License.
+
+Made with ❤️ using the MERN Stack + AI
+
+⭐ Star this repository if you found it useful!
