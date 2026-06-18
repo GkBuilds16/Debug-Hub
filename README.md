@@ -4,18 +4,18 @@
 
 ### The DSA Debugging Platform — Learn. Debug. Battle. Dominate.
 
-[![React](https://img.shields.io/badge/React-18.2-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=flat-square&logo=node.js)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248?style=flat-square&logo=mongodb)](https://mongodb.com/)
-[![Socket.IO](https://img.shields.io/badge/Socket.IO-Realtime-010101?style=flat-square&logo=socket.io)](https://socket.io/)
-[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-412991?style=flat-square&logo=openai)](https://openai.com/)
+[![React](https://img.shields.io/badge/React-18.2-61DAFB?style=flat-square\&logo=react)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=flat-square\&logo=node.js)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Mongoose-47A248?style=flat-square\&logo=mongodb)](https://mongodb.com/)
+[![Socket.IO](https://img.shields.io/badge/Socket.IO-Realtime-010101?style=flat-square\&logo=socket.io)](https://socket.io/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-412991?style=flat-square\&logo=openai)](https://openai.com/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-
----
 
 </div>
 
-## 🚀 About The Project
+---
+
+# 🚀 About The Project
 
 DebugDSA is a full-stack gamified DSA debugging platform where developers solve real buggy code, participate in live coding battles, earn certifications, and improve debugging skills through AI-powered complexity analysis.
 
@@ -23,12 +23,18 @@ Unlike traditional coding platforms that focus only on writing solutions, DebugD
 
 ---
 
-## ✨ Features
+# ✨ Features
 
-### 🐛 Bug Challenge System
+## 🐛 Bug Challenge System
 
 * Post bugs with code, description, expected output, language, and topic
-* Multi-language support: JavaScript, Python, Java, C++, and C
+* Multi-language support:
+
+  * JavaScript
+  * Python
+  * Java
+  * C++
+  * C
 * Difficulty levels: Easy / Medium / Hard
 * AI auto-analyzes time & space complexity (Big-O)
 * Community-driven upvoting system
@@ -36,10 +42,10 @@ Unlike traditional coding platforms that focus only on writing solutions, DebugD
 
 ---
 
-### ⚔️ Real-Time Battle Arena
+## ⚔️ Real-Time Battle Arena
 
 * Admin-created timed coding battles
-* Battle states: `UPCOMING` -> `LIVE` -> `FINISHED`
+* Battle states: UPCOMING → LIVE → FINISHED
 * Real-time participant tracking using Socket.IO
 * Live submission system during battle windows
 * Automatic winner detection
@@ -48,7 +54,7 @@ Unlike traditional coding platforms that focus only on writing solutions, DebugD
 
 ---
 
-### 🏆 Gamification & Ranking
+## 🏆 Gamification & Ranking
 
 * Points awarded for solving bugs and winning battles
 * Bronze / Silver / Gold certification system
@@ -58,16 +64,22 @@ Unlike traditional coding platforms that focus only on writing solutions, DebugD
 
 ---
 
-### 🤖 AI-Powered Analysis
+## 🤖 AI-Powered Analysis
 
-* GPT-4o-mini analyzes submitted buggy code and returns:
+* GPT-4o-mini analyzes submitted buggy code
+* Returns:
+
   * Time Complexity
   * Space Complexity
   * Plain-English explanation
-* Handles nested loops, recursive functions, recurrence relation derivation, and Master Theorem applications.
-* Graceful fallback if API key is not configured.
+* Handles:
 
-Every bug posted on the platform is automatically analyzed by the engine:
+  * Nested loops
+  * Recursive functions
+  * Recurrence relation derivation
+  * Master Theorem applications
+* Graceful fallback if API key is not configured
+* Every bug posted on the platform is automatically analyzed by GPT-4o-mini:
 
 ```json
 {
@@ -75,49 +87,64 @@ Every bug posted on the platform is automatically analyzed by the engine:
   "spaceComplexity": "O(n)",
   "explanation": "The outer loop runs n times, and the inner binary search runs log n per iteration, giving O(n log n) overall time complexity."
 }
+```
+
 
 ---
 
-### 🔐 Authentication & Security
+## 🔐 Authentication & Security
 
-* JWT access + refresh token authentication with token rotation
-* Google OAuth 2.0 & Firebase authentication integration
-* Password reset workflows via Nodemailer
-* Account lockout mechanisms after multiple failed attempts
-* Security hardening with Helmet.js security headers and API rate limiting protection
-
----
-
-### 📊 Personalized Recommendations
-
-* Topic-based bug recommendations adjusted to your profile
-* Recommendations intelligently mapped based on solve history
-* Graceful fallback system for brand new users
+* JWT access + refresh token authentication
+* Refresh token rotation
+* Google OAuth 2.0 authentication
+* Firebase authentication integration
+* Password reset via Nodemailer
+* Account lockout after multiple failed attempts
+* Helmet.js security headers
+* API rate limiting protection
 
 ---
 
-### 🛡️ Admin Panel
+## 📊 Personalized Recommendations
 
-* Full CRUD operations for Users, Bugs, Solutions, and Battles
-* Comprehensive battle creation, timing constraints, and lifecycle management
-* Monitor grids to view and review all live battle submissions
+* Topic-based bug recommendations
+* Recommendations based on solve history
+* Graceful fallback for new users
 
 ---
 
-### 🏗️ Tech Stack
+## 🛡️ Admin Panel
 
-| Category | Technologies |
-| :--- | :--- |
-| **Frontend** | React 18, React Router, Framer Motion |
-| **Backend** | Node.js, Express.js, Socket.IO |
-| **Database** | MongoDB, Mongoose ODM |
-| **Authentication** | JWT, Passport.js, Firebase OAuth |
-| **AI Integration** | OpenAI GPT-4o-mini |
-| **Security** | Helmet, bcryptjs, express-rate-limit |
-| **Utilities** | Nodemailer (Email), PDFKit (Certificates) |
+* Full CRUD operations for:
 
-📂 Project Structure
+  * Users
+  * Bugs
+  * Solutions
+  * Battles
+* Battle creation and management
+* View all battle submissions
+* Admin dashboard controls
 
+---
+
+# 🏗️ Tech Stack
+
+| Category       | Technologies                          |
+| -------------- | ------------------------------------- |
+| Frontend       | React 18, React Router, Framer Motion |
+| Backend        | Node.js, Express.js, Socket.IO        |
+| Database       | MongoDB, Mongoose                     |
+| Authentication | JWT, Passport.js, Firebase OAuth      |
+| AI Integration | OpenAI GPT-4o-mini                    |
+| Security       | Helmet, bcryptjs, express-rate-limit  |
+| Email Service  | Nodemailer                            |
+| PDF Generation | PDFKit                                |
+
+---
+
+# 📂 Project Architecture
+
+```bash
 DebugDSA-platform/
 │
 ├── backend/                          # Express.js REST API + Socket.IO server
@@ -217,7 +244,7 @@ DebugDSA-platform/
 │   │   │   ├── ProfileBug.js
 │   │   │   └── battleSubmissions.js
 │   │   │
-│   │   ├── admin/
+│   │   │── admin/
 │   │   │   ├── AdminDashboard.js
 │   │   │   ├── AdminUsers.js
 │   │   │   ├── AdminBugs.js
@@ -242,32 +269,42 @@ DebugDSA-platform/
 │   └── README.md
 │
 └── README.md
+```
+
+
 
 ---
 
-## ⚙️ Local Setup
+# ⚙️ Local Setup
 
-### Prerequisites
+## Prerequisites
 
 * Node.js >= 18
-* MongoDB (Local or Atlas Cluster)
-* OpenAI API Key *(Optional)*
-* Google OAuth Credentials *(Optional)*
+* MongoDB
+* OpenAI API Key (Optional)
+* Google OAuth Credentials (Optional)
 
-### 1️⃣ Clone Repository
+---
+
+## 1️⃣ Clone Repository
 
 ```bash
-git clone [https://github.com/your-username/DebugDSA-platform.git](https://github.com/your-username/DebugDSA-platform.git)
+git clone https://github.com/your-username/DebugDSA-platform.git
 cd DebugDSA-platform
+```
 
-2️⃣ Backend Setup
-Bash
+---
+
+## 2️⃣ Backend Setup
+
+```bash
 cd backend
 npm install
+```
 
-Create a .env file in the root of the backend/ directory:
+Create `.env` file:
 
-Code snippet
+```env
 PORT=5000
 MONGO_URI=your_mongodb_uri
 
@@ -277,47 +314,67 @@ JWT_REFRESH_SECRET=your_refresh_secret
 OPENAI_API_KEY=your_openai_key
 
 FRONTEND_URL=http://localhost:3000
-Start the local API development environment server:
+```
 
-Bash
+Run backend:
+
+```bash
 npm run dev
+```
 
+---
 
-3️⃣ Frontend Setup
-Bash
+## 3️⃣ Frontend Setup
+
+```bash
 cd ../frontend
 npm install
 npm start
+```
 
-🔐 Security Features
-Stateless JWT tokens backed by secure Refresh Token Rotation defenses
+# 🔐 Security Features
 
-Hardened password storage with high-factor bcryptjs encryption hashing
+* JWT Access & Refresh Tokens
+* Password Hashing using bcryptjs
+* HTTP Security Headers using Helmet
+* API Rate Limiting
+* Google OAuth Authentication
+* Refresh Token Rotation
+* Account Lockout Protection
+* Secure Password Reset Flow
 
-Custom secure header configurations powered by Helmet.js middleware
+---
 
-Granular endpoint API rate-limiting to throttle script-kiddie automated hits
+# 🤝 Contributing
 
-Account freezing blocks to secure accounts from ongoing automated sign-in attempts
+Contributions are welcome!
 
-
-
-🤝 Contributing
-Contributions make the open-source world run! Want to help out?
-
-Bash
+```bash
 # Fork the repository
 # Create your feature branch
 git checkout -b feature/amazing-feature
 
-# Commit your changes
+# Commit changes
 git commit -m "Add amazing feature"
 
-# Push to your branch
+# Push changes
 git push origin feature/amazing-feature
-Once submitted, simply fire open a standard Pull Request tracking pipeline.
+```
 
-📄 License
-This ecosystem codebase is distributed fully under the terms of the MIT License.
+Then open a Pull Request.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+---
+
+<div align="center">
+
+Made with  using MERN Stack + AI
 
 ⭐ Star this repository if you found it useful!
+
+</div>
