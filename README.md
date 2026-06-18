@@ -76,3 +76,248 @@ Every bug posted on the platform is automatically analyzed by the engine:
   "explanation": "The outer loop runs n times, and the inner binary search runs log n per iteration, giving O(n log n) overall time complexity."
 }
 
+---
+
+### 🔐 Authentication & Security
+
+* JWT access + refresh token authentication with token rotation
+* Google OAuth 2.0 & Firebase authentication integration
+* Password reset workflows via Nodemailer
+* Account lockout mechanisms after multiple failed attempts
+* Security hardening with Helmet.js security headers and API rate limiting protection
+
+---
+
+### 📊 Personalized Recommendations
+
+* Topic-based bug recommendations adjusted to your profile
+* Recommendations intelligently mapped based on solve history
+* Graceful fallback system for brand new users
+
+---
+
+### 🛡️ Admin Panel
+
+* Full CRUD operations for Users, Bugs, Solutions, and Battles
+* Comprehensive battle creation, timing constraints, and lifecycle management
+* Monitor grids to view and review all live battle submissions
+
+---
+
+### 🏗️ Tech Stack
+
+| Category | Technologies |
+| :--- | :--- |
+| **Frontend** | React 18, React Router, Framer Motion |
+| **Backend** | Node.js, Express.js, Socket.IO |
+| **Database** | MongoDB, Mongoose ODM |
+| **Authentication** | JWT, Passport.js, Firebase OAuth |
+| **AI Integration** | OpenAI GPT-4o-mini |
+| **Security** | Helmet, bcryptjs, express-rate-limit |
+| **Utilities** | Nodemailer (Email), PDFKit (Certificates) |
+
+📂 Project Structure
+
+DebugDSA-platform/
+│
+├── backend/                          # Express.js REST API + Socket.IO server
+│   │
+│   ├── config/
+│   │   ├── env.js                    # Environment configuration
+│   │   ├── firebase.js               # Firebase Admin SDK setup
+│   │   └── passport.js               # Google OAuth strategy
+│   │
+│   ├── controllers/
+│   │   ├── authController.js         # Authentication & JWT handling
+│   │   ├── bugController.js          # Bug CRUD + AI analysis
+│   │   ├── battleController.js       # Battle management & live events
+│   │   ├── solutionController.js     # Solution submission & upvotes
+│   │   ├── userController.js         # Profiles, leaderboard, followers
+│   │   ├── certificateController.js  # PDF certificate generation
+│   │   ├── recommendationController.js # Personalized recommendations
+│   │   ├── runCodeController.js      # Code execution endpoint
+│   │   └── adminController.js        # Admin CRUD operations
+│   │
+│   ├── middleware/
+│   │   ├── authMiddleware.js         # JWT authentication middleware
+│   │   └── adminAuth.js              # Admin authorization middleware
+│   │
+│   ├── models/
+│   │   ├── User.js                   # User schema & gamification
+│   │   ├── Bug.js                    # Bug schema with AI fields
+│   │   ├── Solution.js               # Solution schema + upvotes
+│   │   ├── Battle.js                 # Battle schema & winner logic
+│   │   └── BattleSolution.js         # Battle submission model
+│   │
+│   ├── routes/
+│   │   ├── adminRoutes.js            # Admin dashboard & CRUD routes
+│   │   ├── authRoutes.js             # Authentication routes
+│   │   ├── battleRoutes.js           # Battle management routes
+│   │   ├── bugRoutes.js              # Bug challenge routes
+│   │   ├── certificateRoutes.js      # Certificate download routes
+│   │   ├── recommendationRoutes.js   # Personalized recommendations
+│   │   ├── runCode.js                # Code execution routes
+│   │   ├── solutionRoutes.js         # Solution submission routes
+│   │   └── userRoutes.js             # User profile & leaderboard routes
+│   │
+│   ├── utils/
+│   │   ├── complexityAnalyzer.js     # GPT-4o-mini complexity analysis
+│   │   ├── certificationChecker.js   # Certification eligibility logic
+│   │   └── sendEmail.js              # Nodemailer email utility
+│   │
+│   └── server.js                     # Backend entry point
+│
+├── frontend/                         # React 18 SPA
+│   │
+│   ├── public/                       # Static assets
+│   │
+│   ├── src/
+│   │   │
+│   │   ├── api/
+│   │   │   └── axiosInstance.js      # Axios interceptors + auth refresh
+│   │   │
+│   │   ├── assets/
+│   │   │   └── dsaaa.png             # Project assets
+│   │   │
+│   │   ├── components/               # Reusable UI components
+│   │   │   ├── Adminprotected.js
+│   │   │   ├── challengeDetails.js
+│   │   │   ├── CodeEditor.js
+│   │   │   ├── LivesSession.js
+│   │   │   ├── Navbar.js
+│   │   │   ├── RecommendedBugs.js
+│   │   │   └── SolutionCard.js
+│   │   │
+│   │   ├── context/
+│   │   │   └── Authcontext.js        # Global authentication state
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── login.js
+│   │   │   ├── signup.js
+│   │   │   ├── profile.js
+│   │   │   ├── userprofile.js
+│   │   │   ├── postbug.js
+│   │   │   ├── viewbugs.js
+│   │   │   ├── viewbug.js
+│   │   │   ├── BugSolution.js
+│   │   │   ├── Battles.js
+│   │   │   ├── BattleRoom.js
+│   │   │   ├── BattleLeaderboard.js
+│   │   │   ├── leaderboard.js
+│   │   │   ├── MySubmissions.js
+│   │   │   ├── AllSubmissions.js
+│   │   │   ├── ForgotPassword.js
+│   │   │   ├── ResetPassword.js
+│   │   │   ├── OAuthSuccess.js
+│   │   │   ├── ProfileFollowers.js
+│   │   │   ├── ProfileFollowing.js
+│   │   │   ├── ProfilePoints.js
+│   │   │   ├── ProfileUpvotes.js
+│   │   │   ├── ProfileBug.js
+│   │   │   └── battleSubmissions.js
+│   │   │
+│   │   ├── admin/
+│   │   │   ├── AdminDashboard.js
+│   │   │   ├── AdminUsers.js
+│   │   │   ├── AdminBugs.js
+│   │   │   ├── AdminBattles.js
+│   │   │   ├── AdminSubmissions.js
+│   │   │   ├── adminBattleSubmissions.js
+│   │   │   ├── createBattle.js
+│   │   │   └── AdminLogin.js
+│   │   │
+│   │   ├── styles/
+│   │   │   └── theme.css             # Global styling
+│   │   │
+│   │   ├── App.js                    # Application routes
+│   │   ├── api.js
+│   │   ├── config.js
+│   │   ├── firebase.js
+│   │   ├── index.js
+│   │   └── App.css
+│   │
+│   ├── .env
+│   ├── package.json
+│   └── README.md
+│
+└── README.md
+
+---
+
+## ⚙️ Local Setup
+
+### Prerequisites
+
+* Node.js >= 18
+* MongoDB (Local or Atlas Cluster)
+* OpenAI API Key *(Optional)*
+* Google OAuth Credentials *(Optional)*
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone [https://github.com/your-username/DebugDSA-platform.git](https://github.com/your-username/DebugDSA-platform.git)
+cd DebugDSA-platform
+
+2️⃣ Backend Setup
+Bash
+cd backend
+npm install
+
+Create a .env file in the root of the backend/ directory:
+
+Code snippet
+PORT=5000
+MONGO_URI=your_mongodb_uri
+
+JWT_SECRET=your_jwt_secret
+JWT_REFRESH_SECRET=your_refresh_secret
+
+OPENAI_API_KEY=your_openai_key
+
+FRONTEND_URL=http://localhost:3000
+Start the local API development environment server:
+
+Bash
+npm run dev
+
+
+3️⃣ Frontend Setup
+Bash
+cd ../frontend
+npm install
+npm start
+
+🔐 Security Features
+Stateless JWT tokens backed by secure Refresh Token Rotation defenses
+
+Hardened password storage with high-factor bcryptjs encryption hashing
+
+Custom secure header configurations powered by Helmet.js middleware
+
+Granular endpoint API rate-limiting to throttle script-kiddie automated hits
+
+Account freezing blocks to secure accounts from ongoing automated sign-in attempts
+
+
+
+🤝 Contributing
+Contributions make the open-source world run! Want to help out?
+
+Bash
+# Fork the repository
+# Create your feature branch
+git checkout -b feature/amazing-feature
+
+# Commit your changes
+git commit -m "Add amazing feature"
+
+# Push to your branch
+git push origin feature/amazing-feature
+Once submitted, simply fire open a standard Pull Request tracking pipeline.
+
+📄 License
+This ecosystem codebase is distributed fully under the terms of the MIT License.
+
+⭐ Star this repository if you found it useful!
