@@ -126,7 +126,7 @@ alert("Google login failed");
       setLoading(true);
       setError("");
 
-      const user = await login(email, password);
+     const user = await login(email.trim().toLowerCase(), password);
 
       console.log("Logged in user:", user);
 

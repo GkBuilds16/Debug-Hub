@@ -70,13 +70,19 @@ export const createSolution = async (req, res) => {
       spaceComplexity:
         analysis.spaceComplexity,
 
-      postedByOwner:
-        bug.postedBy?._id
-          ? bug.postedBy._id.toString() ===
-            req.user._id.toString()
-          : bug.postedBy.toString() ===
-            req.user._id.toString()
-
+     // postedByOwner:
+       // bug.postedBy?._id
+         // ? bug.postedBy._id.toString() ===
+           // req.user._id.toString()
+          //: bug.postedBy.toString() ===
+            //req.user._id.toString()
+postedByOwner:
+  !!bug.postedBy &&
+  (
+    bug.postedBy._id
+      ? bug.postedBy._id.toString() === req.user._id.toString()
+      : bug.postedBy.toString() === req.user._id.toString()
+  )
     });
 
     ////////////////////////////////////////////////////////////

@@ -24,7 +24,7 @@ try{
     }
   );
 
-  setBugs(res.data);
+  setBugs(res.data.bugs || []);
 
 }catch(err){
 

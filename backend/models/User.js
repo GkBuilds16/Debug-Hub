@@ -50,7 +50,7 @@ password: {
 
 role: {
   type: String,
-  enum: ["user", "admin", "donor"],
+  enum: ["user", "admin", "donor","receiver"],
   default: "user"
 },
 

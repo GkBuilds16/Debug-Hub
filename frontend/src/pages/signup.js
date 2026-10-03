@@ -45,10 +45,10 @@ const API = "http://localhost:5000/api";
 
   console.log("Google login success:", res.data);
 
-localStorage.setItem(
-  "token",
-  res.data.token
-);
+//localStorage.setItem(
+  //"token",
+  //res.data.token
+//);
 
 localStorage.setItem(
   "user",
