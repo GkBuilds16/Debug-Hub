@@ -21,7 +21,8 @@ function Signup() {
   const [error, setError] = useState("");
 
   //const API = `${process.env.REACT_APP_API}/api`;
-const API = "http://localhost:5000/api";
+//const API = "http://localhost:5000/api";
+const API = `${process.env.REACT_APP_API || "http://localhost:5000"}/api`;
   //////////////////////////////////////////////////////
   // GOOGLE SIGNUP
   //////////////////////////////////////////////////////
